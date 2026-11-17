@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bank-statement-analyzer-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false   # Set manually in Render dashboard
+      - key: GEMINI_API_KEY
+        sync: false   # Set manually in Render dashboard
